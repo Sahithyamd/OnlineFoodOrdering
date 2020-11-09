@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>deletee</title>
+    <link rel="stylesheet" href="{% static 'css/deletee.css' %}">
+</head>
+<body>
+     <table class="abc"  cellpadding="200" cellspacing="40">
+         <thead class="def">
+         <tr style=" color:rgb(241, 74, 74); font-size: 25px; font-style: italic;">
+             <th>    NAME    </th>
+             <th>   PRICE    </th>
+             <th>   ACTION    </th>
+         </tr>
+             </thead>
+             {% for item in items %}
+             <tr style=" color:rgb(10, 176, 206); font-size: 20px; font-style: normal;">
+                
+                 <td>{{ item.name }}</td>
+                 <td>{{ item.price }}</td>
+
+                 <td >
+                     <a href="/fabout/delete/{{ item.id }}" style="color: rgb(214, 83, 247);">Delete</a>
+                 </td>
+             </tr>
+             {% endfor %}
+
+
+
+     <tbody>
+    
+
+</body>
+</html>

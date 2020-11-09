@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view</title>
+    <link rel="stylesheet" href="{% static 'css/abc.css' %}">
+</head>
+<body>
+    <div class='col-sm-8 col-sm-offset-2'>
+      
+    <table class="table" cellpadding="20" cellspacing="30">
+      <thead>
+        <tr style=" color: cyan; font-size: 22px; font-style: italic;">
+            <th>    ITEM   </th>
+            <th>   PRICE    </th>
+            <th>   QTY   </th>
+        </tr>
+          
+      </thead>
+      <tfoot>
+
+        <tr></tr>
+        <tr style="color: aqua; font-style: normal; font-size: 25px;">
+            <td>Location : {{order.address }}</td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td></td>
+            <td style="color: rgb(247, 30, 30); font-size: 30px; font-style: italic;"> Total: {{ order.total}}</td>
+        </tr>
+        
+            
+             </tfoot>
+
+      
+
+        {% for item in ob %}
+       
+        <tr style="font-style: normal; font-size: 18px; color: lightgreen;">
+            <td> {{ item.product.name}}</td>
+            <td> {{ item.product.price }}</td>
+           
+        
+            <td>{{ item.quantity }}</td>
+                    </tr>
+                   <!--<tfoot>
+                        <tr>
+                            <td>
+                            </td>
+                            <td></td>
+                            <td style="color: rgb(247, 30, 30); font-size: 30px; font-style: italic;"> Total: {{ item.cart.total }}</td>
+                        </tr>
+                    </tfoot>--> 
+   
+        {% endfor %}
+
+
+    </table>
+</div>
+
+
+</body>
+</html>

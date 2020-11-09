@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/orderlist.css' %}">
+
+</head>
+<body>
+    <div calss ="def">
+        <h2 style="color: gold; font-size: 40px; font-style: normal; text-align: center;">ALL ORDERS</h2>
+    </div>
+    <table class="abc"  cellpadding="40" cellspacing="30" style="top: 40%; left: 50%;">
+    {% for item in order %}
+    <tr style="color: bisque; font-style: italic; font-size: 20px;">
+       <td>{{item.order_id}}</td>
+       <!--<td>{{item.cart}}</td>
+       <td>{{item.status}}</td>-->
+       <td>       <a href="/fabout/view/{{ item.cart.id }}" style="color: deepskyblue; ">View</a></td>
+       <td>
+       <form method="post" action="/fabout/setstatus/{{ item.id }}">
+        {% csrf_token %}
+        <select  name="setstatus">
+          <option > </option>
+          <option >Pending</option>
+          <option >On_the_way</option>
+          <option >Delivered</option>    
+       </select>
+        <input type="submit" value=" SET ">
+    </form>
+</td>
+    <td>
+    <a href="/fabout/deleteorder/{{ item.id }}" style="color: rgb(233, 31, 17);">Delete</a></td>
+    
+</tr>
+    {% endfor %}
+
+
+</table>
+     
+</body>
+</html>

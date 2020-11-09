@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="{% static 'img/fav.png' %}">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Macro</title>
+
+		<link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700' %}" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+			<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+			<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+			<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">				
+			<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">							
+			<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+			<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">				
+			<link rel="stylesheet" href="{% static 'css/main.css' %}">
+		</head>
+		<body>	
+			<header id="header">
+				<div class="header-top">
+					<div class="container">
+				  		<div class="row justify-content-center">
+						      <div id="logo">
+						        <a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" title="" /></a>
+						      </div>
+				  		</div>			  					
+					</div>
+				</div>
+					</header><!-- #header -->
+			
+			<!-- start banner Area -->
+			<section class="about-banner relative">
+				<div class="overlay overlay-bg"></div>
+				<div class="container">				
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">
+								Menus				
+							</h1>	
+							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="menu.html"> Menus</a></p>
+						</div>	
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->			
+
+			<!-- Start menu-area Area -->
+            <section class="menu-area section-gap" id="menu">
+                <div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">What kind of Foods we serve for you</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>	
+					<li><a href="abc" style="font-style: italic; font-size: 30px; color: rgb(67, 16, 207);">checkout</a></li>
+					
+                   <!--menu headings lyk lunch breakfast
+                    <ul class="filter-wrap filters col-lg-12 no-padding">
+                        <li class="active" data-filter="*">All Menu</li>
+                        <li data-filter=".breakfast">Breakfast</li>
+                        <li data-filter=".lunch">Lunch</li>
+                        <li data-filter=".dinner">Dinner</li>
+                        <li data-filter=".budget-meal">Budget Meal</li>
+                        <li data-filter=".buffet">Buffet</li>
+                    </ul>
+				-->
+				<ul class="filter-wrap filters col-lg-12 no-padding">
+					<li class="active" data-filter="*">All Menu</li>
+				</ul>
+                    <div class="filters-content">
+                        <div class="row grid">
+							<!--for loop-->
+							{% for product in products %}
+                            <div class="col-md-6 all breakfast">
+								<div class="single-menu">
+									<div class="title-wrap d-flex justify-content-between">
+										<h4>{{product.name}}</h4>
+										<h4 class="price">{{product.price}}</h4>
+										
+									</div>	
+									
+									
+									
+				<!--   <a href=' {% url "update_cart" item.slug '>ADD to cart</a><br> -->
+				  <!-- <a href=  "/fabout/update_cart/{{ product.slug }}" >ADD to cart</a>-->
+
+
+				  <form method='GET' action='{% url "update_cart" product.slug %}'>
+					  <select  name="qty">
+						<option > </option>
+						<option >1</option>
+						<option >2</option>
+						<option >3</option>
+						<option >4</option>
+						<option >5</option>
+						<option >6</option>
+						<option >7</option>
+						<option >8</option>
+						<option >9</option>
+						<option >10</option>
+
+					</select><br>
+					  <input type="submit" value="Add">
+				  </form>
+				  
+
+				   	</div>
+								
+				</div>   
+						           
+								
+							 <!--close forloop--> 
+							{% endfor %}
+
+							
+                        </div>
+                    </div>
+				</div>
+
+                
+            </section>
+            <!-- End menu-area Area -->						
+
+						
+
+			
+			<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+			<script src="{% static 'js/popper.min.js' %}"></script>
+			<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>			
+			<script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA' %}"></script>		
+ 			<script src="{% static 'js/jquery-ui.js' %}"></script>					
+  			<script src="{% static 'js/easing.min.js' %}"></script>			
+			<script src="{% static 'js/hoverIntent.js' %}"></script>
+			<script src="{% static 'js/superfish.min.js' %}"></script>	
+			<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+			<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>						
+			<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>					
+			<script src="{% static 'js/owl.carousel.min.js' %}"></script>			
+            <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>								
+			<script src="{% static 'js/mail-script.js' %}"></script>	
+			<script src="{% static 'js/main.js' %}"></script>	
+		</body>
+	</html>

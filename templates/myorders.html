@@ -1,0 +1,35 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/myorders.css' %}">
+
+</head>
+<body>
+    <div calss ="def">
+        <h2 style="color: gold; font-size: 40px; font-style: normal; text-align: center;top: 20%;">MY ORDERS</h2>
+    </div>
+    <table class="abc"  cellpadding="40" cellspacing="30" style="top: 40%; left: 50%;">
+    {% for item in order %}
+    <tr style="color: bisque; font-style: italic; font-size: 20px;">
+       <td>{{item.order_id}}</td>
+     
+       <td style="color: rgb(190, 64, 240);">Your order is : {{ item.setstatus}}</td>
+     
+       <td>       <a href="/fabout/myordersview/{{ item.cart.id }}" style="color: deepskyblue; ">View</a></td>
+     
+       
+       
+
+
+    {% endfor %}
+
+
+</table>
+     
+</body>
+</html>

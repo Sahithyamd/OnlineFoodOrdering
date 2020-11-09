@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>menu3</title>
+    <link rel="stylesheet" href="{% static 'css/menu3.css' %}">
+</head>
+<body>
+    
+    <form action ="menu3" method="post">
+   
+  <div class="abc">
+      {% csrf_token %}
+      <h5 style="color: red; font-style: italic; font-size: 30px;">Menu items:</h5><br>
+    <input type="text" name="name" placeholder="     Itemname     ">
+    <input type="number" name="price" placeholder="      cost    " >
+     
+   <!--<input type="checkbox" name="isActive" checked="True"  >isActive
+   <select name="isActive" aria-placeholder="active">
+       <option value="true">true</option>
+       <option value="false">false</option>
+
+   </select >-->
+   
+    <br><br><br>
+    <button style=" padding:1.5% 10% 1.5% 10%;   border-radius: 20px; border:none; background-color:red">ADD</button>
+    </div><br><br>
+
+    <h1 style="color: rgb(196, 196, 187); font-size: 30px; font-style: oblique;position: absolute;
+    top: 60%;
+    left: 35%;font-size: 50px;">
+        A festival of flavors
+    </h1>
+    
+							
+
+</form>
+</body>
+</html>
